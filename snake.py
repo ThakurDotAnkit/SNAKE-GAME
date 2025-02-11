@@ -1,5 +1,4 @@
 from turtle import Turtle
-
 CORDINATES = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
 UP = 90
@@ -51,3 +50,9 @@ class Snake():
     def down(self):
         if self.head.heading() != UP:
             self.head.setheading(DOWN)
+    def reset(self):
+        for seg in self.segments:
+            seg.goto(700,700)
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
